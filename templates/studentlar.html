@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get">
+    <input type="text" placeholder="Ism kiriting" name="qidiruv_sozi">
+    <button>Qidirish</button>
+</form>
+<ol>
+    {% for i in books %}
+    <h2><li style="color:aqua; font-size: 30px; width: 50pxl height: 50px; margin-left: 100px">{{ i }} </li></h2>
+    <a href="/talaba_ochir/{{i.id}}"><button>O'chirish</button></a>
+    {% endfor %}
+</ol>
+</body>
+</html>

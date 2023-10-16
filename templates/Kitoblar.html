@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h1>Kutubxonadagi barcha kitoblar ro'yhati</h1>
+<br>
+<hr>
+<form method="get">
+    <input type="text" placeholder="kiriting" name="qidiruv_sozi">
+    <button>Qidirish</button>
+</form>
+<ol>
+    {% for i in books %}
+  <h2><li><a href="/bitta_kitob/{{i.id}}">{{ i }} ({{i.muallif.ism}})</a></li></h2>
+    <a href="/kitob_ochir/{{i.id}}"><button>O'chirish</button></a>
+    {% endfor %}
+</ol>
+</body>
+</html>
