@@ -5,8 +5,13 @@
     <title>Title</title>
 </head>
 <body>
+<form method="get">
+    <input type="text" placeholder="kiriting" name="qidiruv_sozi">
+    <button>Qidirish</button>
+</form>
     {% for i in books %}
   <h2><li><a href="/tanlangan_muallif/{{i.id}}">{{ i }} ({{i.muallif.ism}})</a></li></h2>
+    <a href="/muallif_ochir/{{i.id}}"><button>O'chirish</button></a>
     {% endfor %}
 </body>
 </html>

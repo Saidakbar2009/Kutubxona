@@ -48,18 +48,6 @@ def bitta_kitob(request, son):
     }
     return render(request, 'mashq/kniga.html', data)
 
-def mualliflar(request):
-    data = {
-        "books": Muallif.objects.all()
-    }
-    return render(request, 'mashq/Mualliflar.html', data)
-
-def tanlangan_muallif(request, son):
-    data = {
-        "books": Muallif.objects.get(id=son)
-    }
-    return render(request, 'mashq/Tanlangan.html', data)
-
 # def kitoblar(request):
 #     s = Kitob.objects.all()
 #     soz = request.GET.get("qidiruv_sozi")
@@ -69,6 +57,22 @@ def tanlangan_muallif(request, son):
 #         "books": s
 #     }
 #     return render(request, "Kitoblar.html", data)
+def mualliflar(request):
+    m = Muallif.objects.all()
+    soz = request.GET.get("qidiruv_sozi")
+    if soz is not None:
+        m = Muallif.objects.filter(ism__contains=soz)
+    data = {
+        "books": m
+    }
+    return render(request, 'mashq/Mualliflar.html', data)
+
+def tanlangan_muallif(request, son):
+    data = {
+        "books": Muallif.objects.get(id=son)
+    }
+    return render(request, 'mashq/Tanlangan.html', data)
+
 def record(request):
     r = Record.objects.all()
     soz = request.GET.get("qidiruv_sozi")
@@ -149,3 +153,6 @@ def kitob_ochir(request, son):
     Kitob.objects.filter(id=son).delete()
     return redirect("/kitob")
 
+def muallif_ochir(request, son):
+    Talaba.objects.filter(id=son).delete()
+    return redirect("/muallif")
