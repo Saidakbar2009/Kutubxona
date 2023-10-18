@@ -14,6 +14,7 @@ urlpatterns = [
     path('bitta_record/<int:son>/', bitta_record),
     path('talaba_ochir/<int:son>/', talaba_ochir),
     path('muallif_ochir/<int:son>/', muallif_ochir),
+    path('record_ochir/<int:son>/', record_ochir),
     path('kitob_ochir/<int:son>/', kitob_ochir),
     path('tanlangan_muallif/<int:son>/', tanlangan_muallif),
     path('muallif/', mualliflar),

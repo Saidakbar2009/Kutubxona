@@ -47,16 +47,6 @@ def bitta_kitob(request, son):
         "kitob": Kitob.objects.get(id=son)
     }
     return render(request, 'mashq/kniga.html', data)
-
-# def kitoblar(request):
-#     s = Kitob.objects.all()
-#     soz = request.GET.get("qidiruv_sozi")
-#     if soz is not None:
-#         s = Kitob.objects.filter(nom__contains=soz) | Kitob.objects.filter(muallif__ism__contains=soz)
-#     data = {
-#         "books": s
-#     }
-#     return render(request, "Kitoblar.html", data)
 def mualliflar(request):
     m = Muallif.objects.all()
     soz = request.GET.get("qidiruv_sozi")
@@ -154,5 +144,9 @@ def kitob_ochir(request, son):
     return redirect("/kitob")
 
 def muallif_ochir(request, son):
-    Talaba.objects.filter(id=son).delete()
-    return redirect("/muallif")
+    Muallif.objects.filter(id=son).delete()
+    return redirect("/muallif/")
+
+def record_ochir(request, son):
+    Record.objects.filter(id=son).delete()
+    return redirect('/record/')
