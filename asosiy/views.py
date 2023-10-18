@@ -60,9 +60,22 @@ def tanlangan_muallif(request, son):
     }
     return render(request, 'mashq/Tanlangan.html', data)
 
+# def kitoblar(request):
+#     s = Kitob.objects.all()
+#     soz = request.GET.get("qidiruv_sozi")
+#     if soz is not None:
+#         s = Kitob.objects.filter(nom__contains=soz) | Kitob.objects.filter(muallif__ism__contains=soz)
+#     data = {
+#         "books": s
+#     }
+#     return render(request, "Kitoblar.html", data)
 def record(request):
+    r = Record.objects.all()
+    soz = request.GET.get("qidiruv_sozi")
+    if soz is not None:
+        r = Record.objects.filter(talaba__ism__contains=soz)
     data = {
-        "books": Record.objects.all()
+        "books": r
     }
     return render(request, 'mashq/Recordlar.html', data)
 
@@ -135,3 +148,4 @@ def talaba_ochir(request, son):
 def kitob_ochir(request, son):
     Kitob.objects.filter(id=son).delete()
     return redirect("/kitob")
+
