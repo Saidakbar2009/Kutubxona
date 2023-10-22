@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+<br>
+<form method="post">{% csrf_token %}
+    <input type="text" name="ismi" value="{{ talaba.ism }}" disabled>
+    <input type="number" name="kurs" value="{{ talaba.kurs }}">
+    <input type="number" name="k_son" value="{{ talaba.kitoblar_soni }}">
+    <button>Saqlash</button>
+</form>
+<br>
+<br>
+</body>
+</html>

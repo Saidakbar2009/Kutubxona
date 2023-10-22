@@ -26,6 +26,9 @@ urlpatterns = [
     path('tirikning_kitobi/', tirikning_kitobi),
     path('badiiy/', badiiy),
     path('t_yil/', t_yil),
+    path('kutubxonachi/', kutubxonachi),
     path('bitiruvchi/', bitiruvchi),
     path('10kitob/', kitob_10),
+    path('talaba_update/<int:pk>/', talaba_update),
+    path('kitob_update/<int:id>/', kitob_update),
 ]

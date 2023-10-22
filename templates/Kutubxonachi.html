@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for i in kutubxonachi %}
+<h2>{{ i }}</h2>
+{% endfor %}
+<form method="post">{% csrf_token %}
+  <input type="text" name="ism">
+  <select name="vaqt">
+  <option value="8:00-13:00">8:00-13:00</option>
+  <option value="13:30-18:00">13:30-18:00</option>
+  </select>
+  <button>Qo'shish</button>
+</form>
+</body>
+</html>

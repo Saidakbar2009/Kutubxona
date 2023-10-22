@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+<br>
+<form method="post">{% csrf_token %}
+        <label>Nom:</label>
+        <input type="text" value="{{books.nom}}" name="nomi">
+         <br>
+        <br>
+         <br>
+        <br>
+        <label>Kitob sahifasi:</label>
+        <input type="number" value="{{books.sahifa}}" name="k_s">
+         <br>
+        <br>
+        <label>Janr:</label>
+        <select name="janr">
+            <option value="{{books.janr}}">{{books.janr}}</option>
+            {% for i in janrlar %}
+            <option value="{{i}}">{{i}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <select name="m">
+             <option value="{{books.muallif.id}}">{{books.muallif.ism}}</option>
+            {% for i in  muallif%}
+            <option value="{{i.id}}">{{i}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <button>O'zgartirish</button>
+    </form>
+<br>
+<br>
+</body>
+</html>

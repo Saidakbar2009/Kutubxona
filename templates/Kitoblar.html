@@ -16,7 +16,40 @@
     {% for i in books %}
   <h2><li><a href="/bitta_kitob/{{i.id}}">{{ i }} ({{i.muallif.ism}})</a></li></h2>
     <a href="/kitob_ochir/{{i.id}}"><button>O'chirish</button></a>
+    <a href="/kitob_update/{{i.id}}/"><button>O'zgartirish</button></a>
     {% endfor %}
 </ol>
+<br>
+    <br>
+    <form method="post">{% csrf_token %}
+        <label>Nom:</label>
+        <input type="text" placeholder="Ism yozing" name="nomi">
+         <br>
+        <br>
+         <br>
+        <br>
+        <label>Kitob sahifasi:</label>
+        <input type="number" placeholder="Kitob sahifasi" name="k_s">
+         <br>
+        <br>
+        <label>Janr:</label>
+        <select name="janr">
+            <option value="Badiiy">Badiiy</option>
+            <option value="Ilmiy">Ilmiy</option>
+            <option value="Hujjatli">Hujjatli</option>
+        </select>
+        <br>
+        <br>
+        <select name="m">
+            {% for i in  muallif %}
+            <option value="{{i.id}}">{{i}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <button>Qo'shish</button>
+    </form>
+     <br>
+    <br>
 </body>
 </html>

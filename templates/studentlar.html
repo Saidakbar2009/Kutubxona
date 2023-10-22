@@ -13,7 +13,18 @@
     {% for i in books %}
     <h2><li style="color:aqua; font-size: 30px; width: 50pxl height: 50px; margin-left: 100px">{{ i }} </li></h2>
     <a href="/talaba_ochir/{{i.id}}"><button>O'chirish</button></a>
+    <a href="/talaba_update/{{i.id}}"><button>Yangilash</button></a>
     {% endfor %}
 </ol>
+<br>
+<br>
+<form method="post">{% csrf_token %}
+    <input type="text" placeholder="ism" name="ismi" >
+    <input type="number" placeholder="kurs" name="kurs">
+    <input type="number" placeholder="kitob soni" name="k_son">
+    <button>Qo'shish</button>
+</form>
+<br>
+<br>
 </body>
 </html>
