@@ -7,13 +7,15 @@
 <body>
 {% for i in kutubxonachi %}
 <h2>{{ i }}</h2>
+<a href="/kutubxonachi_update/{{i.id}}"><button>Yangilash</button></a>
 {% endfor %}
 <form method="post">{% csrf_token %}
-  <input type="text" name="ism">
-  <select name="vaqt">
-  <option value="8:00-13:00">8:00-13:00</option>
-  <option value="13:30-18:00">13:30-18:00</option>
-  </select>
+<!--  <input type="text" name="ism">-->
+<!--  <select name="vaqt">-->
+<!--  <option value="8:00-13:00">8:00-13:00</option>-->
+<!--  <option value="13:30-18:00">13:30-18:00</option>-->
+<!--  </select>-->
+    {{ forma }}
   <button>Qo'shish</button>
 </form>
 </body>

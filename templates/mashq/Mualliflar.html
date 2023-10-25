@@ -12,31 +12,33 @@
     {% for i in books %}
   <h2><li><a href="/tanlangan_muallif/{{i.id}}">{{ i }} ({{i.muallif.ism}})</a></li></h2>
     <a href="/muallif_ochir/{{i.id}}"><button>O'chirish</button></a>
+    <a href="/muallif_update/{{i.id}}"><button>Yangilash</button></a>
     {% endfor %}
 <br>
     <br>
     <form method="post">{% csrf_token %}
-        <label>Ism:</label>
-        <input type="text" placeholder="Ism yozing" name="ismi">
-         <br>
-        <br>
-        <label>Tug'ilgan sana:</label>
-        <input type="date" name="t_y">
-         <br>
-        <br>
-        <label>Kitoblari soni:</label>
-        <input type="number" placeholder="Kitoblari soni" name="k_s">
-         <br>
-        <br>
-        <label>Jinsi:</label>
-        <select name="jinsi">
-            <option value="Erkak">Erkak</option>
-            <option value="Ayol">Ayol</option>
-        </select>
-        <br>
-        <br>
-        <label>Tirik</label>
-        <input type="checkbox" name="t">
+<!--        <label>Ism:</label>-->
+<!--        <input type="text" placeholder="Ism yozing" name="ismi">-->
+<!--         <br>-->
+<!--        <br>-->
+<!--        <label>Tug'ilgan sana:</label>-->
+<!--        <input type="date" name="t_y">-->
+<!--         <br>-->
+<!--        <br>-->
+<!--        <label>Kitoblari soni:</label>-->
+<!--        <input type="number" placeholder="Kitoblari soni" name="k_s">-->
+<!--         <br>-->
+<!--        <br>-->
+<!--        <label>Jinsi:</label>-->
+<!--        <select name="jinsi">-->
+<!--            <option value="Erkak">Erkak</option>-->
+<!--            <option value="Ayol">Ayol</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <label>Tirik</label>-->
+<!--        <input type="checkbox" name="t">-->
+        {{ forma }}
          <br>
         <br>
         <button>Qo'shish</button>

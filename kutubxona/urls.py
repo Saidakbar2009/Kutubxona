@@ -31,4 +31,7 @@ urlpatterns = [
     path('10kitob/', kitob_10),
     path('talaba_update/<int:pk>/', talaba_update),
     path('kitob_update/<int:id>/', kitob_update),
+    path('kutubxonachi_update/<int:id>/', kutubxonachi_update),
+    path('muallif_update/<int:id>/', muallif_update),
+    path('record_update/<int:id>/', record_update)
 ]

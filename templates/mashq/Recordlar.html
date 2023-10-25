@@ -12,24 +12,26 @@
 {% for i in books %}
   <h2><li><a href="/bitta_record/{{i.id}}">{{ i }}</a></li></h2>
 <a href="/record_ochir/{{i.id}}"><button>O'chirish</button></a>
+<a href="/record_update/{{i.id}}"><button>Yangilash</button></a>
     {% endfor %}
 <form method="post">{% csrf_token %}
-    <select name="talaba">
-            {% for i in  talaba%}
-            <option value="{{i.id}}">{{i}}</option>
-            {% endfor %}
-    </select>
-    <select name="kitob">
-            {% for i in  kitob%}
-            <option value="{{i.id}}">{{i}}</option>
-            {% endfor %}
-    </select>
-    <select name="kutubxonachi">
-            {% for i in  kutubxonachi%}
-            <option value="{{i.id}}">{{i}}</option>
-            {% endfor %}
-    </select>
-    <input type="date" placeholder="olingan sana" name="sana">
+<!--    <select name="talaba">-->
+<!--            {% for i in  talaba%}-->
+<!--            <option value="{{i.id}}">{{i}}</option>-->
+<!--            {% endfor %}-->
+<!--    </select>-->
+<!--    <select name="kitob">-->
+<!--            {% for i in  kitob%}-->
+<!--            <option value="{{i.id}}">{{i}}</option>-->
+<!--            {% endfor %}-->
+<!--    </select>-->
+<!--    <select name="kutubxonachi">-->
+<!--            {% for i in  kutubxonachi%}-->
+<!--            <option value="{{i.id}}">{{i}}</option>-->
+<!--            {% endfor %}-->
+<!--    </select>-->
+<!--    <input type="date" placeholder="olingan sana" name="sana">-->
+    {{ forma }}
     <button>Qo'shish</button>
 </form>
 </body>

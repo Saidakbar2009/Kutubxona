@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+        <label>Ism:</label>
+        <input type="text" value="{{muallif.ism}}" name="ismi">
+         <br>
+        <br>
+        <br>
+        <label>Kitoblari soni:</label>
+        <input type="number" name="k_s" value="{{muallif.kitoblar_soni}}">
+         <br>
+        <br>
+        <label>Jinsi:</label>
+        <select name="jinsi">
+            {% for i in jins %}
+            <option value="{{i.id}}">{{i}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+         <br>
+        <br>
+        <button>O'zgartirish</button>
+    </form>
+</body>
+</html>
