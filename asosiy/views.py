@@ -223,7 +223,7 @@ def talaba_update(request, pk):
     return render(request, 'talaba_update.html', data)
 
 def kitob_update(request, id):
-    if request.method == 'POST':
+    if request.method == 'POST':    
         x = Kitob.objects.get(id=id)
         x.nom = request.POST.get("nomi")
         x.janr = request.POST.get("janr")
@@ -294,4 +294,5 @@ def record_update(request, id):
         "record": record
     }
     return render(request, 'record_update.html', data)
+
 
